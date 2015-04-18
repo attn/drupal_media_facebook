@@ -1,0 +1,16 @@
+name = Media: Facebook
+description = Adds Facebook as a supported media provider.
+package = Media
+core = 7.x
+
+dependencies[] = media_internet
+
+files[] = includes/MediaFacebookStreamWrapper.inc
+files[] = includes/MediaInternetFacebookHandler.inc
+
+
+; Information added by drush on 2015-04-17
+version = "unknown"
+project = "media_facebook"
+datestamp = "1429293610"
+
