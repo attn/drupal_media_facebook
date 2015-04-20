@@ -13,6 +13,7 @@
 class MediaInternetFacebookHandler extends MediaInternetBaseHandler {
   public function parse($embedCode) {
     $patterns = array(
+      '@facebook\.com/.*\/videos\/[a-z][a-z]\..*/(\d+)/.*@i',
       '@facebook\.com/video\.php\?v=(\d+)@i',
       '@facebook\.com/.*\/videos\/(\d+)\/.*@i',
       '@facebook\.com/.*\/posts\/(\d+)\/.*@i',
