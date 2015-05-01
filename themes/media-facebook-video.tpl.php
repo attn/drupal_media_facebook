@@ -11,8 +11,7 @@
  *  $id - The file entity ID (fid).
  *  $url - The full url including query options for the Facebook iframe.
  *  $options - An array containing the Media Facebook formatter options.
- *  $api_id_attribute - An id attribute if the Javascript API is enabled;
- *  otherwise NULL.
+ *  $api_id_attribute - An id attribute if the Javascript API is enabled or NULL.
  *  $width - The width value set in Media: Facebook file display options.
  */
 ?>

@@ -14,7 +14,7 @@ class MediaFacebookStreamWrapper extends MediaReadOnlyStreamWrapper {
   /**
    * Gets Mime Type.
    */
-  static function getMimeType($uri, $mapping = NULL) {
+  public function getMimeType($uri, $mapping = NULL) {
     return 'video/facebook';
   }
 
