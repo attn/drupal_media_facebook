@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file media_facebook/themes/media-facebook-video.tpl.php
+ * @File media_facebook/themes/media-facebook-video.tpl.php.
  *
  * Template file for theme('media_facebook_video').
  *
@@ -16,7 +16,6 @@
  *  $width - The width value set in Media: Facebook file display options.
  *
  */
-
 ?>
 
 <div id="fb-root"></div>
