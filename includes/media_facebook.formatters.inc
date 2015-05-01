@@ -75,20 +75,19 @@ function media_facebook_file_formatter_video_settings($form, &$form_state, $sett
   );
 
   // @see http://developer.facebook.com/player/embedding
-
   $element['protocol_specify'] = array(
     '#title' => t('Specify an http protocol'),
     '#type' => 'checkbox',
     '#default_value' => $settings['protocol_specify'],
-    '#description' => t('An explicit protocol may be neccesary for videos embedded in RSS feeds and emails. If no protocol is specified, iframes will be protocol relative.'),
+    '#description' => t('An explicit protocol may be necessary for videos embedded in RSS feeds and emails. If no protocol is specified, iframes will be protocol relative.'),
   );
   $element['protocol'] = array(
     '#title' => t('Iframe protocol'),
     '#type' => 'radios',
     '#default_value' => $settings['protocol'],
     '#options' => array(
-      'http://' => 'HTTP',
-      'https://' => 'HTTPS',
+      'http://' => t('HTTP'),
+      'https://' => t('HTTPS'),
     ),
     '#states' => array(
       'invisible' => array(
@@ -101,12 +100,13 @@ function media_facebook_file_formatter_video_settings($form, &$form_state, $sett
 }
 
 /**
- * Validation for width
+ * Validation for width.
  */
-function _facebook_validate_video_width($element, &$form_state, $form) {
-  // Check if the value is a number with an optional decimal or percentage sign, or "auto".
-  if (!empty($element['#value']) && !preg_match('/^(auto|([0-9]*(\.[0-9]+)?%?))$/', $element['#value'])) {
-    form_error($element, t("The value entered for @dimension is invalid. Please insert a unitless integer for pixels, a percent, or \"auto\". Note that percent and auto may not function correctly depending on the browser and doctype.", array('@dimension' => $element['#title'])));
+function media_facebook_validate_video_width($element, &$form_state, $form) {
+  // Check if the value is a number with decimal, percentage sign or "auto".
+  $pattern = '/^(auto|([0-9]*(\.[0-9]+)?%?))$/';
+  if (!empty($element['#value']) && !preg_match($pattern, $element['#value'])) {
+    form_error($element, t('The value entered for @dimension is invalid. Please insert a unitless integer for pixels, a percent, or "auto". Note that percent and auto may not function correctly depending on the browser and doctype.', array('@dimension' => $element['#title'])));
   }
 }
 

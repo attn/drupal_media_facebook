@@ -2,8 +2,7 @@
 
 /**
  * @file
- * Provides a stream wrapper and formatters appropriate for accessing and
- * displaying Facebook videos.
+ * Provides a stream wrapper and formatters for displaying Facebook videos.
  */
 
 // Load all Facebook file formatters.
@@ -14,7 +13,7 @@ require_once dirname(__FILE__) . '/includes/media_facebook.formatters.inc';
  */
 function media_facebook_media_internet_providers() {
   return array(
-    'MediaInternetFacebookHandler' => array(
+    'MediaFacebookInternetHandler' => array(
       'title' => t('Facebook'),
     ),
   );
@@ -56,11 +55,11 @@ function media_facebook_theme($existing, $type, $theme, $path) {
  *   appropriate handler.
  */
 function media_facebook_media_parse($embed_code) {
-  $handler = new MediaInternetFacebookHandler($embed_code);
+  $handler = new MediaFacebookInternetHandler($embed_code);
   return $handler->parse($embed_code);
 }
 
- /**
+/**
  * Implements hook_file_mimetype_mapping_alter().
  */
 function media_facebook_file_mimetype_mapping_alter(&$mapping) {

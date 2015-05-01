@@ -1,30 +1,39 @@
 <?php
 
 /**
- *  @file
- *  Extends the MediaReadOnlyStreamWrapper class to handle Facebook videos.
+ * @file
+ * Extends the MediaReadOnlyStreamWrapper class to handle Facebook videos.
  */
 
 /**
- *  Create an instance like this:
- *  $facebook = new MediaFacebookStreamWrapper('facebook://v/[video-code]');
+ * Creates a "new MediaFacebookStreamWrapper('facebook://v/[video-code]')".
  */
 class MediaFacebookStreamWrapper extends MediaReadOnlyStreamWrapper {
-  protected $base_url = 'http://facebook.com';
+  protected $baseUrl = 'http://facebook.com';
 
+  /**
+   * Gets Mime Type.
+   */
   static function getMimeType($uri, $mapping = NULL) {
     return 'video/facebook';
   }
 
+  /**
+   * Interpolates URL.
+   */
   function interpolateUrl() {
     if ($parameters = $this->get_parameters()) {
-      return $this->base_url . '/' . $parameters['v'];
+      return $this->baseUrl . '/' . $parameters['v'];
     }
   }
 
+  /**
+   * Get Local Thumbnail Path.
+   */
   function getLocalThumbnailPath() {
     $parts = $this->get_parameters();
     $local_path = 'public://media-facebook/' . check_plain($parts['v']) . '.jpg';
     return $local_path;
   }
+
 }

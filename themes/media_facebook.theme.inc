@@ -1,8 +1,7 @@
 <?php
 
 /**
- * @file media_facebook/themes/media_facebook.theme.inc
- *
+ * @File media_facebook/themes/media_facebook.theme.inc.
  * Theme and preprocess functions for Media: Facebook.
  */
 
@@ -14,9 +13,6 @@ function media_facebook_preprocess_media_facebook_video(&$variables) {
   $wrapper = file_stream_wrapper_get_instance_by_uri($variables['uri']);
   $parts = $wrapper->get_parameters();
   $variables['video_id'] = $parts['v'];
-
-  // Make the file object available.
-  $file_object = file_uri_to_object($variables['uri']);
 
   // Parse options and build the query string. Only add the option to the query
   // array if the option value is not default. Be careful, depending on the

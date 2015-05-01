@@ -1,8 +1,7 @@
 <?php
 
 /**
- * @file media_facebook/themes/media-facebook-video.tpl.php
- *
+ * @File media_facebook/themes/media-facebook-video.tpl.php.
  * Template file for theme('media_facebook_video').
  *
  * Variables available:
@@ -14,11 +13,8 @@
  *  $api_id_attribute - An id attribute if the Javascript API is enabled;
  *  otherwise NULL.
  *  $width - The width value set in Media: Facebook file display options.
- *
  */
-
 ?>
-
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
