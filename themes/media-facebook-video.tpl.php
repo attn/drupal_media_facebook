@@ -3,17 +3,6 @@
 /**
  * Template file for theme('media_facebook_video').
  */
-
-/**
- * Variables available:
- *  $uri - The media uri for the Facebook video (e.g., facebook://v/xsy7x8c9).
- *  $video_id - The unique identifier of the Facebook video (e.g., xsy7x8c9).
- *  $id - The file entity ID (fid).
- *  $url - The full url including query options for the Facebook iframe.
- *  $options - An array containing the Media Facebook formatter options.
- *  $api_id_attribute - An id attribute if the API is enabled or NULL.
- *  $width - The width value set in Media: Facebook file display options.
- */
 ?>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
