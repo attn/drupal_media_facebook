@@ -38,7 +38,7 @@ class MediaFacebookInternetHandler extends MediaInternetBaseHandler {
    */
   public function claim($embed_code) {
     if ($this->parse($embed_code)) {
-      return TRUE;  
+      return TRUE;
     }
   }
 
