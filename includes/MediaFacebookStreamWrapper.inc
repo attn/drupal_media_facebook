@@ -21,7 +21,7 @@ class MediaFacebookStreamWrapper extends MediaReadOnlyStreamWrapper {
   /**
    * Interpolates URL.
    */
-  function interpolateUrl() {
+  public function interpolateUrl() {
     if ($parameters = $this->get_parameters()) {
       return $this->baseUrl . '/' . $parameters['v'];
     }
@@ -30,7 +30,7 @@ class MediaFacebookStreamWrapper extends MediaReadOnlyStreamWrapper {
   /**
    * Get Local Thumbnail Path.
    */
-  function getLocalThumbnailPath() {
+  public function getLocalThumbnailPath() {
     $parts = $this->get_parameters();
     $local_path = 'public://media-facebook/' . check_plain($parts['v']) . '.jpg';
     return $local_path;

@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @File media_facebook/themes/media-facebook-video.tpl.php.
- *
  * Template file for theme('media_facebook_video').
- *
+ */
+
+/**
  * Variables available:
  *  $uri - The media uri for the Facebook video (e.g., facebook://v/xsy7x8c9).
  *  $video_id - The unique identifier of the Facebook video (e.g., xsy7x8c9).

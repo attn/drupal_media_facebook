@@ -1,8 +1,6 @@
 <?php
 
 /**
- * @File media_facebook/themes/media_facebook.theme.inc.
- *
  * Theme and preprocess functions for Media: Facebook.
  */
 
