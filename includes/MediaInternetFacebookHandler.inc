@@ -46,7 +46,7 @@ class MediaInternetFacebookHandler extends MediaInternetBaseHandler {
    * Gets file object from parsed embed code.
    */
   public function getFileObject() {
-    $uri = $this->parse($this->embed_code);
+    $uri = $this->parse($this->embedCode);
     $file = file_uri_to_object($uri, TRUE);
     return $file;
   }
