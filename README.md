@@ -11,7 +11,7 @@ INTRODUCTION
 
 Current Maintainers:
 
- * Devin Carlson <http://drupal.org/user/290182>
+ * Quincy Reid <https://www.drupal.org/u/quincyreid>
 
 Media: Facebook adds Facebook as a supported media provider.
 
@@ -21,6 +21,7 @@ REQUIREMENTS
 Media: Facebook has one dependency.
 
 Contributed modules
+ * Media <https://www.drupal.org/project/media>
  * Media Internet - A submodule of the Media module.
 
 INSTALLATION
