@@ -8,7 +8,7 @@
 /**
  * Implementation of MediaInternetBaseHandler.
  *
- * @see hook_media_internet_providers().
+ * @see, hook_media_internet_providers()
  */
 class MediaInternetFacebookHandler extends MediaInternetBaseHandler {
 

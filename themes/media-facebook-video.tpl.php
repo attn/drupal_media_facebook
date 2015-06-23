@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * video player embed.
+ */
+
+/**
  * Template file for theme('media_facebook_video').
  */
 ?>
