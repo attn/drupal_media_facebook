@@ -8,7 +8,7 @@
 /**
  * Implements hook_file_default_displays().
  */
-function media_facebook_file_default_displays() {
+function media_facebook_video_file_default_displays() {
   $file_displays = array();
 
   $file_display = new stdClass();

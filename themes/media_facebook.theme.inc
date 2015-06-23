@@ -1,14 +1,13 @@
 <?php
 
 /**
- * @file
  * Theme and preprocess functions for Media: Facebook.
  */
 
 /**
  * Preprocess function for theme('media_facebook_video').
  */
-function media_facebook_preprocess_media_facebook_video(&$variables) {
+function media_facebook_video_preprocess_media_facebook_video(&$variables) {
   // Build the URI.
   $wrapper = file_stream_wrapper_get_instance_by_uri($variables['uri']);
   $parts = $wrapper->get_parameters();

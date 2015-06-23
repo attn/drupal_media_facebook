@@ -6,12 +6,12 @@
  */
 
 // Load all Facebook file formatters.
-require_once dirname(__FILE__) . '/includes/media_facebook.formatters.inc';
+require_once dirname(__FILE__) . '/includes/media_facebook_video.formatters.inc';
 
 /**
  * Implements hook_media_internet_providers().
  */
-function media_facebook_media_internet_providers() {
+function media_facebook_video_media_internet_providers() {
   return array(
     'MediaInternetFacebookHandler' => array(
       'title' => t('Facebook'),
@@ -22,7 +22,7 @@ function media_facebook_media_internet_providers() {
 /**
  * Implements hook_stream_wrappers().
  */
-function media_facebook_stream_wrappers() {
+function media_facebook_video_stream_wrappers() {
   return array(
     'facebook' => array(
       'name' => t('Facebook videos'),
@@ -36,11 +36,11 @@ function media_facebook_stream_wrappers() {
 /**
  * Implements hook_theme().
  */
-function media_facebook_theme($existing, $type, $theme, $path) {
+function media_facebook_video_theme($existing, $type, $theme, $path) {
   return array(
     'media_facebook_video' => array(
       'variables' => array('uri' => NULL, 'options' => array()),
-      'file' => 'media_facebook.theme.inc',
+      'file' => 'media_facebook_video.theme.inc',
       'path' => $path . '/themes',
       'template' => 'media-facebook-video',
     ),
@@ -54,7 +54,7 @@ function media_facebook_theme($existing, $type, $theme, $path) {
  *   any more, since media_internet should be able to automatically route to the
  *   appropriate handler.
  */
-function media_facebook_media_parse($embed_code) {
+function media_facebook_video_media_parse($embed_code) {
   $handler = new MediaInternetFacebookHandler($embed_code);
   return $handler->parse($embed_code);
 }
@@ -62,14 +62,14 @@ function media_facebook_media_parse($embed_code) {
 /**
  * Implements hook_file_mimetype_mapping_alter().
  */
-function media_facebook_file_mimetype_mapping_alter(&$mapping) {
+function media_facebook_video_file_mimetype_mapping_alter(&$mapping) {
   $mapping['mimetypes'][] = 'video/facebook';
 }
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function media_facebook_ctools_plugin_api($module, $api) {
+function media_facebook_video_ctools_plugin_api($module, $api) {
   if ($module == 'file_entity' && $api == 'file_default_displays') {
     return array('version' => 1);
   }

@@ -8,7 +8,7 @@
 /**
  * Implements hook_file_formatter_info().
  */
-function media_facebook_file_formatter_info() {
+function media_facebook_video_file_formatter_info() {
   $formatters['media_facebook_video'] = array(
     'label' => t('Facebook Video'),
     'file types' => array('video'),
@@ -18,8 +18,8 @@ function media_facebook_file_formatter_info() {
       'protocol' => 'https://',
       'protocol_specify' => FALSE,
     ),
-    'view callback' => 'media_facebook_file_formatter_video_view',
-    'settings callback' => 'media_facebook_file_formatter_video_settings',
+    'view callback' => 'media_facebook_video_file_formatter_video_view',
+    'settings callback' => 'media_facebook_video_file_formatter_video_settings',
     'mime types' => array('video/facebook'),
   );
 
@@ -29,8 +29,8 @@ function media_facebook_file_formatter_info() {
     'default settings' => array(
       'image_style' => '',
     ),
-    'view callback' => 'media_facebook_file_formatter_image_view',
-    'settings callback' => 'media_facebook_file_formatter_image_settings',
+    'view callback' => 'media_facebook_video_file_formatter_image_view',
+    'settings callback' => 'media_facebook_video_file_formatter_image_settings',
     'mime types' => array('video/facebook'),
   );
 
@@ -40,7 +40,7 @@ function media_facebook_file_formatter_info() {
 /**
  * Implements hook_file_formatter_FORMATTER_view().
  */
-function media_facebook_file_formatter_video_view($file, $display, $langcode) {
+function media_facebook_video_file_formatter_video_view($file, $display, $langcode) {
   $scheme = file_uri_scheme($file->uri);
 
   if ($scheme == 'facebook') {
@@ -64,7 +64,7 @@ function media_facebook_file_formatter_video_view($file, $display, $langcode) {
 /**
  * Implements hook_file_formatter_FORMATTER_settings().
  */
-function media_facebook_file_formatter_video_settings($form, &$form_state, $settings) {
+function media_facebook_video_file_formatter_video_settings($form, &$form_state, $settings) {
   $element = array();
 
   $element['width'] = array(
@@ -102,7 +102,7 @@ function media_facebook_file_formatter_video_settings($form, &$form_state, $sett
 /**
  * Validation for width.
  */
-function media_facebook_validate_video_width($element, &$form_state, $form) {
+function media_facebook_video_validate_video_width($element, &$form_state, $form) {
   // Check if the value is a number with decimal, percentage sign or "auto".
   $pattern = '/^(auto|([0-9]*(\.[0-9]+)?%?))$/';
   if (!empty($element['#value']) && !preg_match($pattern, $element['#value'])) {
@@ -113,7 +113,7 @@ function media_facebook_validate_video_width($element, &$form_state, $form) {
 /**
  * Implements hook_file_formatter_FORMATTER_view().
  */
-function media_facebook_file_formatter_image_view($file, $display, $langcode) {
+function media_facebook_video_file_formatter_image_view($file, $display, $langcode) {
   $scheme = file_uri_scheme($file->uri);
 
   if ($scheme == 'facebook') {
@@ -144,7 +144,7 @@ function media_facebook_file_formatter_image_view($file, $display, $langcode) {
 /**
  * Implements hook_file_formatter_FORMATTER_settings().
  */
-function media_facebook_file_formatter_image_settings($form, &$form_state, $settings) {
+function media_facebook_video_file_formatter_image_settings($form, &$form_state, $settings) {
   $element = array();
 
   $element['image_style'] = array(
