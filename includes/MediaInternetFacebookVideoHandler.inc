@@ -10,7 +10,7 @@
  *
  * @see, hook_media_internet_providers()
  */
-class MediaInternetFacebookHandler extends MediaInternetBaseHandler {
+class MediaInternetFacebookVideoHandler extends MediaInternetBaseHandler {
 
   /**
    * Provides facebook patterns for matching the video ID.

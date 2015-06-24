@@ -5,7 +5,7 @@ core = 7.x
 
 dependencies[] = media_internet
 
-files[] = includes/MediaFacebookStreamWrapper.inc
-files[] = includes/MediaInternetFacebookHandler.inc
+files[] = includes/MediaFacebookVideoStreamWrapper.inc
+files[] = includes/MediaInternetFacebookVideoHandler.inc
 
 ; Information added by drush on 2015-04-17

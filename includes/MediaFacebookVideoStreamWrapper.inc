@@ -6,9 +6,9 @@
  */
 
 /**
- * Creates a "new MediaFacebookStreamWrapper('facebook://v/[video-code]')".
+ * Creates a "new MediaFacebookVideoStreamWrapper('facebook://v/[video-code]')".
  */
-class MediaFacebookStreamWrapper extends MediaReadOnlyStreamWrapper {
+class MediaFacebookVideoStreamWrapper extends MediaReadOnlyStreamWrapper {
   protected $baseUrl = 'http://facebook.com';
 
   /**
@@ -32,7 +32,7 @@ class MediaFacebookStreamWrapper extends MediaReadOnlyStreamWrapper {
    */
   public function getLocalThumbnailPath() {
     $parts = $this->get_parameters();
-    $local_path = 'public://media-facebook/' . check_plain($parts['v']) . '.jpg';
+    $local_path = 'public://media-facebook-video/' . check_plain($parts['v']) . '.jpg';
     return $local_path;
   }
 
